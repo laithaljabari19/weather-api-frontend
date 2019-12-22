@@ -1,0 +1,63 @@
+<html>
+<body>
+<head>
+<link rel="stylesheet" type="text/css" href="styyle.css">
+
+</head>
+<center>
+<h1 class="tit">حالة الطقس</h1></center>
+<center>
+   <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+	
+    </select>
+<!-- <input type="text" id="city"/ placeholder="write city"> -->
+ <button id="serch"onclick="go()" > click </button>
+ </center>
+ <center>
+ <h1 class="clas">
+ <div id="error"></div>
+ <div id="temp"> </div>
+  <div id="min"> </div>
+   <div id="max"> </div>
+    <div id="humid"> </div>
+	<h1>
+ </center>
+</body>
+<script>
+function go(){
+ var citytext = document.getElementById("country").value;
+
+ getData(citytext).then(data => {
+
+console.log(data);
+if(data!=false){
+document.getElementById("temp").innerHTML ="<span id='attr' > tempreature : </span> "+ data["main"]["temp"]; 
+
+document.getElementById("min").innerHTML ="<span id='attr' > tempreature minimum : </span>"+ data["main"]["temp_min"];
+
+document.getElementById("max").innerHTML ="<span id='attr' > tempreature maximum : </span>"+ data["main"]["temp_max"];  
+
+document.getElementById("humid").innerHTML ="<span id='attr' > tempreaturehumid : </span>" + data["main"]["humidity"]; 
+}
+else{
+document.getElementById("temp").innerHTML ="error in fething data"
+}
+
+});
+}
+
+
+async function getData(city){
+ var response = await fetch("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=590877c74b6c0de4fddb22d1bd818ebb");
+ if(response.status==200)
+ return response.json();
+else
+return false
+}
+
+</script>
+
+</html>

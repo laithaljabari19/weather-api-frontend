@@ -1,0 +1,55 @@
+body{background-color:#ffe4c4}
+
+#temp{color:blue;
+margin:1.5%
+
+}
+#min{color:blue;
+margin:1.5%
+
+}
+#max{color:blue;
+margin:1.5%
+}
+#humid{color:blue;
+margin:1.5%
+}
+
+#country{color:blue;
+margin:10px; 
+border:25%;
+width:20%;
+padding:10px;
+height: 10%
+
+}
+
+
+#serch{color:#ff0aff;
+
+
+width:10%;
+height:10%
+}
+body{margin:70px;
+  
+border-radius:50px;
+  
+}
+
+.tit{color:#ff0aff;
+padding-top:15px;
+margin-top: 1em;
+border : 2px solid pink;
+width :40%;
+padding: 0.7em;
+font-size:50pt
+}
+
+#attr {
+	color : red; 
+}
+  
+  
+  
+  
